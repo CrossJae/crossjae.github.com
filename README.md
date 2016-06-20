@@ -1,3 +1,3 @@
 # crossjae.github.com
 
-some example of my work
+some examples of practise
