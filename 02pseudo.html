@@ -5,6 +5,8 @@
 <title>伪元素</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 <link rel="stylesheet" rev="stylesheet" href="css/base.css" type="text/css" />
 <script src="js/index.js"></script>
 </head>
@@ -22,7 +24,15 @@ a{text-decoration:none;outline:none;cursor:pointer}
 a:hover{text-decoration:underline}
 
 /*pseudo*/
-body{background:#fff}
+body{background:#fff;padding-bottom:100px;}
+.unit{position:relative;width:400px;min-height:100px;margin:0 auto;border-bottom:2px solid #eee;counter-increment:exlist}
+.unit:before{content:'0'counter(exlist)'.';position:absolute;left:-60px;top:0;font-size:30px;text-align:right;font-family:'Space Mono',monospace;}
+.unit:after{content:"";display:block;height:0;overflow:hidden;clear:both;}
+
+
+
+
+
 .circle{display:block;width:40px;height:40px;border-radius:100%;background:#000;margin:300px;position:relative;}
 .circle::before{content:" ";display:block;width:44px;height:44px;border-radius:100%;border:1px solid #000;background:transparent;position:absolute;left:50%;top:50%;margin:-22px 0 0 -22px;box-sizing:border-box;opacity:1}
 .circle:hover::before{border:1px solid red;}
@@ -65,23 +75,29 @@ body{background:#fff}
 	50%{width:60px;height:60px;margin:-30px 0 0 -30px;opacity:0.4}
 	90%{width:90px;height:90px;margin:-45px 0 0 -45px;opacity:0}
 }
+
+
 </style>
-<ul class="list">
-	<li><a href="#">EXAMPLE LIST ONE</a></li>
-	<li><a href="#">EXAMPLE LIST TWO</a></li>
-	<li><a href="#">EXAMPLE LIST THREE</a></li>
-</ul>
-
-<div class="bigimg">
-	<a href="#"><img src="images/200x150.jpg" alt="" /></a>
+<div class="unit">
+	<ul class="list">
+		<li><a href="#">EXAMPLE LIST ONE</a></li>
+		<li><a href="#">EXAMPLE LIST TWO</a></li>
+		<li><a href="#">EXAMPLE LIST THREE</a></li>
+	</ul>
 </div>
-
-<div class="nav">
-  <ul>
-    <li><a href="">CON1</a></li>
-    <li><a href="">CON2</a></li>
-    <li><a href="">CON3</a></li>
-  </ul>
+<div class="unit">
+	<div class="bigimg">
+		<a href="#"><img src="images/200x150.jpg" alt="" /></a>
+	</div>
+</div>
+<div class="unit">
+	<div class="nav">
+	  <ul>
+	    <li><a href="">CON1</a></li>
+	    <li><a href="">CON2</a></li>
+	    <li><a href="">CON3</a></li>
+	  </ul>
+	</div>
 </div>
 </body>
 </html>
