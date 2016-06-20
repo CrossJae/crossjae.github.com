@@ -9,6 +9,61 @@
 <script src="js/index.js"></script>
 </head>
 <body>
+/*reset*/
+html,body,h1,h2,h3,h4,h5,h6,dl,dt,dd,div,p,textarea{margin:0;padding:0;}
+body{font:12px/18px "Microsoft YaHei",Arial,Helvetica,sans-serif;}
+ul,li,ol{padding:0;margin:0;list-style-type:none}
+h1,h2,h3,h4,h5,h6{font-size:1em}
+textarea{resize:none}
+input,button,select,textarea{outline:0;vertical-align:middle;font-size:12px}
+img{border:0;vertical-align:middle}
+a{text-decoration:none;outline:none;cursor:pointer}
+a:hover{text-decoration:underline}
+
+/*pseudo*/
+body{background:#fff}
+.circle{display:block;width:40px;height:40px;border-radius:100%;background:#000;margin:300px;position:relative;}
+.circle::before{content:" ";display:block;width:44px;height:44px;border-radius:100%;border:1px solid #000;background:transparent;position:absolute;left:50%;top:50%;margin:-22px 0 0 -22px;box-sizing:border-box;opacity:1}
+.circle:hover::before{border:1px solid red;}
+
+/*list*/
+.list{margin:50px auto;width:200px;background:#fff;padding:20px;box-sizing:border-box;}
+.list li{font-size:14px;line-height:24px;}
+.list li a{text-decoration:none;position:relative;padding:0 5px;color:#000;}
+.list li a::after{content:"";position:absolute;top:50%;left:0;width:0;background:#000;height:2px;margin-top:-1px;transition:width 0.2s linear;}
+.list li a:hover::after{width:100%;}
+
+/*border*/
+.bigimg{margin:50px auto;width:200px;overflow:hidden}
+.bigimg a{display:block;position:relative}
+.bigimg a::before{content:"";position:absolute;left:0;top:0;width:0;height:0;box-sizing:border-box;}
+.bigimg a::after{content:"";position:absolute;right:0;bottom:0;width:0;height:0;box-sizing:border-box;}
+.bigimg a:hover::before{border:1px solid transparent;border-left:0 none;border-bottom:0 none;animation:borderline 1s 1;animation-fill-mode:both;}
+.bigimg a:hover::after{border:1px solid transparent;border-right:0 none;border-top:0 none;animation:borderline 1s 1 1s;animation-fill-mode:both;}
+
+@keyframes borderline
+{
+	0{width:0;height:0;border-color:#113f4e;}
+	50% {width:100%;height:0;border-color:#113f4e;}
+	100%{width:100%;height:100%;border-color:#113f4e;}
+}
+
+/*NAV*/
+.nav{width:200px;margin:100px auto;}
+.nav li{float:left;width:33.3%;text-align:center}
+.nav li a{position:relative;display:block;color:#000;font-size:16px;}
+.nav li a:hover{text-decoration:none}
+.nav li a::before{content:"";position:absolute;left:50%;top:50%;width:0;height:0;border:1px solid #000;box-sizing:border-box;border-radius:100%;opacity:0}
+.nav li a:hover::before{animation:circle 1s infinite;}
+.nav li a::after{content:"";position:absolute;left:50%;top:50%;width:0;height:0;border:1px solid #000;box-sizing:border-box;border-radius:100%;opacity:0}
+.nav li a:hover::after{animation:circle 1s infinite 0.5s;}
+
+
+@keyframes circle{
+	25%{width:30px;height:30px;margin:-15px 0 0 -15px;opacity:0.2}
+	50%{width:60px;height:60px;margin:-30px 0 0 -30px;opacity:0.4}
+	90%{width:90px;height:90px;margin:-45px 0 0 -45px;opacity:0}
+}
 
 <ul class="list">
 	<li><a href="#">EXAMPLE LIST ONE</a></li>
