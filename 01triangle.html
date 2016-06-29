@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>纯CSS写三角形</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<link rel="stylesheet" rev="stylesheet" href="stylesheets/base.css" type="text/css" />
+</head>
+<body>
+<style>
+/*common*/
+body{background:#efefef;padding-bottom:100px}
+.unit{position:relative;width:400px;min-height:100px;margin:0 auto;border-bottom:1px solid #ddd;counter-increment:exlist}
+.unit:before{content:'0'counter(exlist)'.';position:absolute;left:-60px;top:0;font-size:30px;font-family:'Space Mono',Arial,Helvetica,sans-serif}
+.unit:after{content:"";display:block;height:0;overflow:hidden;clear:both}
+
+.imgbox1{position:relative;width:200px;height:300px;overflow:hidden;margin:50px auto}
+.imgbox1 img{display:block}
+.imgbox1 p{position:absolute;left:0;bottom:0;line-height:22px;padding:8px 10px;background:#fff;color:#666;font-size:14px}
+.imgbox1 p:before{content:"";position:absolute;left:20px;top:-7px;display:block;width:15px;height:15px;background:#fff;transform:rotate(45deg)}
+
+.imgbox2{position:relative;width:200px;height:300px;overflow:hidden;margin:50px auto}
+.imgbox2 img{display:block}
+.imgbox2 p{position:absolute;left:0;bottom:0;line-height:22px;padding:8px 10px;background:#fff;color:#666;font-size:14px}
+.imgbox2 i{position:absolute;left:20px;bottom:52px;display:block;width:15px;height:15px;background:#fff;transform:rotate(45deg)}
+
+.imgbox3{position:relative;width:200px;height:300px;overflow:hidden;margin:50px auto}
+.imgbox3 img{display:block}
+.imgbox3 p{position:absolute;left:0;bottom:0;line-height:22px;padding:8px 10px;background:#fff;color:#666;font-size:14px}
+.imgbox3 p:before{content:"";position:absolute;left:20px;top:-10px;display:block;width:0;height:0;overflow:hidden;border-width:0 10px 10px;border-style:solid;border-color:transparent transparent #fff}
+
+.imgbox4{position:relative;width:200px;height:300px;overflow:hidden;margin:50px auto}
+.imgbox4 img{display:block}
+.imgbox4 p{position:absolute;left:0;bottom:0;line-height:22px;padding:8px 10px;background:#fff;color:#666;font-size:14px;border-top:2px solid #501817}
+.imgbox4 p:before{content:"";position:absolute;left:20px;top:-10px;display:block;width:0;height:0;overflow:hidden;border-width:0 10px 10px;border-style:solid;border-color:transparent transparent #fff;z-index:10}
+.imgbox4 p:after{content:"";position:absolute;left:18px;top:-12px;display:block;width:0;height:0;overflow:hidden;border-width:0 12px 12px;border-style:solid;border-color:transparent transparent #501817;z-index: 0}
+
+/*border三角形原理*/
+.triangle{width:0;height:0;border-width:30px;border-style:solid;border-color:#c03 #fc0 #69c #6c6;margin:50px auto}/* 红#c03 黄#fc0 蓝#69c 绿#6c6 */
+/*上*/
+.tri-up{width:0;height:0;border-width:0 21px 21px 21px;border-style:solid;border-color:transparent transparent #69c transparent;margin:50px auto}
+/*下*/
+.tri-down{width:0;height:0;border-width:21px 21px 0 21px;border-style:solid;border-color:#c03 transparent transparent transparent;margin:50px auto}
+/*左*/
+.tri-left{width:0;height:0;border-width:21px 21px 21px 0;border-style:solid;border-color:transparent #fc0 transparent transparent;margin:50px auto}
+/*右*/
+.tri-right{width:0;height:0;border-width:21px 0 21px 21px;border-style:solid;border-color:transparent transparent transparent #6c6;margin:50px auto}
+
+/*西北*/
+.tri-nw{width:0;height:0;border-top:30px solid #6c6;border-right:30px solid transparent;margin:50px auto}
+/*东北*/
+.tri-ne{width:0;height:0;border-top:30px solid #c03;border-left:30px solid transparent;margin:50px auto}
+/*西南*/
+.tri-sw{width:0;height:0;border-left:30px solid #69c;border-top:30px solid transparent;margin:50px auto}
+/*东南*/
+.tri-se{width:0;height:0;border-right:30px solid #fc0;border-top:30px solid transparent;margin:50px auto}
+</style>
+<div class="unit">
+<div class="imgbox1">
+	<img src="images/200x300.jpg" alt="" />
+	<p>内容文字内容文字内容文字内容文字</p>
+</div>
+</div>
+
+<div class="unit">
+<div class="imgbox2">
+	<img src="images/200x300.jpg" alt="" />
+	<p>内容文字内容文字内容文字内容文字</p>
+	<i></i>
+</div>
+</div>
+
+<div class="unit">
+<div class="imgbox3">
+	<img src="images/200x300.jpg" alt="" />
+	<p>内容文字内容文字内容文字内容文字</p>
+</div>
+</div>
+
+<div class="unit">
+<div class="imgbox4">
+	<img src="images/200x300.jpg" alt="" />
+	<p>内容文字内容文字内容文字内容文字</p>
+</div>
+</div>
+
+<div class="unit">
+<!-- border三角形原理 -->
+<div class="triangle"></div>
+<!-- 上 -->
+<div class="tri-up"></div>
+<!-- 下 -->
+<div class="tri-down"></div>
+<!-- 左 -->
+<div class="tri-left"></div>
+<!-- 右 -->
+<div class="tri-right"></div>
+<!-- 西北 -->
+<div class="tri-nw"></div>
+<!-- 东北 -->
+<div class="tri-ne"></div>
+<!-- 西南 -->
+<div class="tri-sw"></div>
+<!-- 东南 -->
+<div class="tri-se"></div>
+</div>
+</body>
+</html>
