@@ -1,3 +1,1 @@
-# crossjae.github.com
-
-some examples of practise
+some examples of css3 
